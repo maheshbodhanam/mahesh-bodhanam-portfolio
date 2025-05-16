@@ -6,6 +6,9 @@ import reactImage from "../assets/react.png";
 import tailwind from "../assets/tailwind.png";
 import mongodb from "../assets/mongodb.png";
 import node from "../assets/node.png";
+import mui from "../assets/mui.png";
+import vs from "../assets/vs.png";
+import redux from "../assets/redux.png";
 
 const Skills = () => {
   const techs = [
@@ -52,12 +55,30 @@ const Skills = () => {
       title: "GitHub",
       style: "shadow-gray-400",
     },
+    {
+      id: 9,
+      src: redux,
+      title: "Redux",
+      style: "shadow-purple-600",
+    },
+    {
+      id: 10,
+      src: mui,
+      title: "Material UI",
+      style: "shadow-blue-500",
+    },
+    {
+      id: 11,
+      src: vs,
+      title: "VS Code",
+      style: "shadow-blue-400",
+    },
   ];
 
   return (
     <div
       name="skills"
-      className="bg-gradient-to-b from-gray-800 to-black w-full h-screen pt-10"
+      className="bg-gradient-to-b from-gray-800 to-black w-full min-h-screen pt-10"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <div>
