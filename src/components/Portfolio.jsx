@@ -105,6 +105,15 @@ const Portfolio = () => {
             <p className="text-gray-300">
               Built with React, Node.js, MongoDB, Socket.io, and Tailwind CSS.
               Supports multiple users, real-time messaging and chat rooms.
+              <br />
+              <a
+                href="https://github.com/maheshbodhanam/real-time-chat-app-frontend"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline"
+              >
+                GitHub
+              </a>
             </p>
           </div>
         </div>
