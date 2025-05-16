@@ -75,6 +75,22 @@ const Portfolio = () => {
           </h3>
 
           <div className="bg-gray-900 p-5 rounded-lg shadow-md mb-6">
+            <h4 className="text-xl font-bold">My Portfolio Website</h4>
+            <p className="text-gray-300">
+              My Portfolio dashboard using React, Tailwind, Node.js, MongoDB.
+              <br />
+              <a
+                href="https://github.com/maheshbodhanam/mahesh-bodhanam-portfolio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 underline"
+              >
+                GitHub
+              </a>
+            </p>
+          </div>
+
+          <div className="bg-gray-900 p-5 rounded-lg shadow-md mb-6">
             <h4 className="text-xl font-bold">Task Management Dashboard</h4>
             <p className="text-gray-300">
               Kanban-style dashboard using React, Tailwind, JSON-server, MSWjs.
