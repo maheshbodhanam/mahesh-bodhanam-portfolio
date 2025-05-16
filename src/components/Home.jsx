@@ -4,7 +4,7 @@ import mahesh from "../assets/mahesh.jpeg";
 
 const Home = () => {
   return (
-    <div className="w-full py-16 bg-gradient-to-b from-black via-black to-gray-800">
+    <div className="w-full py-16 bg-gradient-to-b from-gray-800 to-black">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white">
