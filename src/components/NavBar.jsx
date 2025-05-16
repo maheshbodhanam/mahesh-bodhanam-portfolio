@@ -8,7 +8,6 @@ const NavBar = () => {
   const [isTop, setIsTop] = useState(true);
 
   const links = [
-    { id: 1, link: "home" },
     { id: 3, link: "portfolio" },
     { id: 4, link: "skills" },
     { id: 5, link: "contact" },
@@ -40,6 +39,11 @@ const NavBar = () => {
       </div>
 
       <ul className="hidden md:flex">
+        <li className="px-4 cursor-pointer capitalize font-medium text-gray-300 hover:scale-105 duration-200">
+          <Link to="/" smooth duration={500}>
+            Home
+          </Link>
+        </li>
         {links.map(({ id, link }) => (
           <li
             key={id}

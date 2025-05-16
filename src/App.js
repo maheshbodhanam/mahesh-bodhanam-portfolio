@@ -16,7 +16,7 @@ function App() {
       <NavBar />
       <Suspense fallback={<div className="text-center p-5">Loading...</div>}>
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
