@@ -1,5 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -16,18 +18,23 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/contact", formData);
-      alert("Message sent!");
+      await axios.post(
+        "https://mahesh-bodhanam-backend.onrender.com/api/contact",
+        formData
+      );
+      toast.success("✅ Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Error sending message");
+      toast.error("❌ Error sending message. Please try again.");
     }
   };
+
   return (
     <div
       name="contact"
       className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
     >
+      <ToastContainer position="top-right" autoClose={3000} />
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
@@ -36,7 +43,7 @@ const Contact = () => {
           <p className="py-6">Submit the form below to get in touch with me</p>
         </div>
 
-        <div className=" flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <form
             onSubmit={handleSubmit}
             className="flex flex-col w-full md:w-1/2"
