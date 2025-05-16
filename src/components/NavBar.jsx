@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
 import mb from "../assets/mb.png";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
@@ -30,7 +30,7 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
+    <div className="flex sticky top-0 justify-between items-center w-full h-20 px-4 text-white bg-black">
       <div>
         <h1 className="text-5xl font-signature ml-2 bg-white rounded-full">
           <img src={mb} alt="mb" height="40px" width="40px" />
