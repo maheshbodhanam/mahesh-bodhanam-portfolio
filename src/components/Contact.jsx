@@ -10,12 +10,15 @@ const Contact = () => {
     message: "",
   });
 
+  const [loading, setLoading] = useState(false); // <-- Spinner loading state
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // start spinner
 
     try {
       await axios.post(
@@ -26,6 +29,8 @@ const Contact = () => {
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       toast.error("❌ Error sending message. Please try again.");
+    } finally {
+      setLoading(false); // stop spinner
     }
   };
 
@@ -55,14 +60,16 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
+              required
             />
             <input
-              type="text"
+              type="email"
               name="email"
               placeholder="Enter your email"
               value={formData.email}
               onChange={handleChange}
               className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
+              required
             />
             <textarea
               name="message"
@@ -71,9 +78,43 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
+              required
             ></textarea>
-            <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
-              Let's talk
+
+            <button
+              type="submit"
+              disabled={loading}
+              className={`text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center justify-center rounded-md duration-300 ${
+                loading ? "opacity-50 cursor-not-allowed" : "hover:scale-110"
+              }`}
+            >
+              {loading ? (
+                <div className="flex items-center gap-2">
+                  <svg
+                    className="animate-spin h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  Sending...
+                </div>
+              ) : (
+                "Let's talk"
+              )}
             </button>
           </form>
         </div>
