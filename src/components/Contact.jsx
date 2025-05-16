@@ -1,6 +1,28 @@
-import React from "react";
+import axios from "axios";
+import { useState } from "react";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("http://localhost:5000/api/contact", formData);
+      alert("Message sent!");
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      alert("Error sending message");
+    }
+  };
   return (
     <div
       name="contact"
@@ -16,29 +38,33 @@ const Contact = () => {
 
         <div className=" flex justify-center items-center">
           <form
-            action="https://getform.io/f/61c99527-2b15-42cf-9b55-ad37d2f7daa6"
-            method="POST"
-            className=" flex flex-col w-full md:w-1/2"
+            onSubmit={handleSubmit}
+            className="flex flex-col w-full md:w-1/2"
           >
             <input
               type="text"
               name="name"
               placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             />
             <input
               type="text"
               name="email"
               placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
               className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             />
             <textarea
               name="message"
               placeholder="Enter your message"
               rows="10"
+              value={formData.message}
+              onChange={handleChange}
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             ></textarea>
-
             <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
               Let's talk
             </button>
