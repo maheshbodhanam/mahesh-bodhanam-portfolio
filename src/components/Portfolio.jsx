@@ -123,7 +123,7 @@ const Portfolio = () => {
               Supports multiple users, real-time messaging and chat rooms.
               <br />
               <a
-                href="https://magenta-sawine-f30018.netlify.app/email"
+                href="https://magenta-sawine-f30018.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 underline"
