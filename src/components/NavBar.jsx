@@ -8,7 +8,7 @@ const NavBar = () => {
   const [isTop, setIsTop] = useState(true);
 
   const links = [
-    { id: 3, link: "portfolio" },
+    { id: 3, link: "projects" },
     { id: 4, link: "skills" },
     { id: 5, link: "contact" },
   ];
@@ -32,26 +32,20 @@ const NavBar = () => {
         isTop ? " bg-black" : "bg-transparent"
       }`}
     >
-      <div>
-        <h1 className="text-5xl font-signature ml-2 bg-white rounded-full">
-          <img src={mb} alt="mb" height="40px" width="40px" />
-        </h1>
-      </div>
+      <Link to="/" className="bg-white">
+        <img src={mb} alt="mb" height="40px" width="40px" />
+      </Link>
 
       <ul className="hidden md:flex">
         <li className="px-4 cursor-pointer capitalize font-medium text-gray-300 hover:scale-105 duration-200">
-          <Link to="/" smooth duration={500}>
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </li>
         {links.map(({ id, link }) => (
           <li
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-300 hover:scale-105 duration-200"
           >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
+            <Link to={link}>{link}</Link>
           </li>
         ))}
       </ul>

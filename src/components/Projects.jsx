@@ -1,12 +1,10 @@
-import React from "react";
-
-const Portfolio = () => {
+const Projects = () => {
   return (
     <div className="bg-gradient-to-b from-gray-800 to-black w-full text-white">
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Portfolio
+            Projects
           </p>
           <p className="py-6">
             Check out some of my professional experience and projects below.
@@ -135,7 +133,7 @@ const Portfolio = () => {
               online.
               <br />
               <a
-                href="https://github.com/maheshbodhanam/mahesh-bodhanam-portfolio"
+                href="https://github.com/maheshbodhanam/mahesh-bodhanam-projProjects"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 underline"
@@ -204,4 +202,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Projects;

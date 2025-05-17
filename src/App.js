@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 // Lazy-loaded pages
 const Home = lazy(() => import("./components/Home"));
 const Skills = lazy(() => import("./components/Skills"));
-const Portfolio = lazy(() => import("./components/Portfolio"));
+const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
@@ -18,7 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/skills" element={<Skills />} />
-          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
