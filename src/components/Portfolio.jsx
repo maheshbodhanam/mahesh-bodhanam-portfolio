@@ -129,8 +129,8 @@ const Portfolio = () => {
                 className="text-blue-400 underline"
               >
                 Live Demo
-              </a>
-              |
+              </a>{" "}
+              |{" "}
               <a
                 href="https://github.com/maheshbodhanam/real-time-chat-app-frontend"
                 target="_blank"
