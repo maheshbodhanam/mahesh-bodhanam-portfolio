@@ -17,6 +17,8 @@ const NavBar = () => {
     { id: 3, link: "projects" },
     { id: 4, link: "skills" },
     { id: 5, link: "contact" },
+    { id: 1, link: "blog" },
+    { id: 6, link: "cv" },
   ];
 
   useEffect(() => {
