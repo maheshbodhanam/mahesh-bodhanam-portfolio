@@ -164,6 +164,19 @@ const CV = () => {
             Pragna Bharathi Institute of Technology, Hyderabad
           </p>
         </div>
+        <button
+          className={`text-white hover:scale-110 bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3  mx-auto flex items-center justify-center rounded-md duration-300`}
+        >
+          <a
+            href="/resume.pdf"
+            className="flex justify-between items-center w-full text-white"
+            download={true}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Download
+          </a>
+        </button>
       </div>
     </div>
   );
