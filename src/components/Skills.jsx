@@ -9,6 +9,8 @@ import github from "../assets/github.png";
 import redux from "../assets/redux.png";
 import mui from "../assets/mui.png";
 import vs from "../assets/vs.png";
+import playwright from "../assets/playwright.svg";
+import capacitor from "../assets/capacitor.png";
 
 const skillsData = [
   { id: 1, src: html, title: "HTML", style: "shadow-orange-500" },
@@ -22,6 +24,8 @@ const skillsData = [
   { id: 9, src: redux, title: "Redux", style: "shadow-purple-600" },
   { id: 10, src: mui, title: "Material UI", style: "shadow-blue-500" },
   { id: 11, src: vs, title: "VS Code", style: "shadow-blue-400" },
+  { id: 12, src: playwright, title: "Playwright", style: "shadow-gray-500" },
+  { id: 13, src: capacitor, title: "CapacitorJS", style: "shadow-gray-500" },
 ];
 
 const Skills = () => {
