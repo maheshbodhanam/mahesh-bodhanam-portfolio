@@ -65,6 +65,15 @@ const Projects = () => {
                 source control, pull requests, and code reviews.
               </li>
             </ul>
+
+            <a
+              href="https://orangecells.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 underline"
+            >
+              View Live
+            </a>
           </div>
 
           <div className="bg-gray-900 p-5 rounded-lg shadow-md">
