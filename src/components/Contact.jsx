@@ -10,7 +10,7 @@ const Contact = () => {
     message: "",
   });
 
-  const [loading, setLoading] = useState(false); // <-- Spinner loading state
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,7 +18,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // start spinner
+    setLoading(true);
 
     try {
       await axios.post(
@@ -30,21 +30,76 @@ const Contact = () => {
     } catch (error) {
       toast.error("❌ Error sending message. Please try again.");
     } finally {
-      setLoading(false); // stop spinner
+      setLoading(false);
     }
   };
 
   return (
-    <div className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white">
+    <div className="w-full min-h-screen bg-gradient-to-b from-gray-800 to-black text-white">
       <ToastContainer position="top-right" autoClose={3000} />
       <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
             Contact
           </p>
-          <p className="py-6">Submit the form below to get in touch with me</p>
+          <p className="py-6">
+            Interested in working together or have a project idea? Fill out the
+            form below or reach out directly using the contact details.
+          </p>
         </div>
 
+        {/* Extra Info Section */}
+        <div className="mb-10 space-y-4 text-sm md:text-base">
+          <p>
+            <strong>Mahesh Bodhanam</strong> – UI / React / Frontend / MERN
+            Stack / Full Stack Developer
+          </p>
+          <p>📍 Hyderabad, India</p>
+          <p>
+            📧 Email:
+            <span className="text-cyan-400 underline pl-2">
+              br95bm@gmail.com
+            </span>
+          </p>
+          <p>
+            📱 Phone:
+            <span className="text-cyan-400 underline pl-2">+91 8179460185</span>
+          </p>
+
+          <p>
+            🔗 LinkedIn:
+            <a
+              href="https://www.linkedin.com/in/mahesh-bodhanam-3a4793188/"
+              className="text-cyan-400 underline pl-2"
+            >
+              linkedin.com/in/mahesh-bodhanam
+            </a>
+          </p>
+          <p>
+            🐙 GitHub:
+            <a
+              href="https://github.com/maheshbodhanam"
+              className="text-cyan-400 underline pl-2"
+            >
+              github.com/maheshbodhanam
+            </a>
+          </p>
+
+          <div className="pt-4 text-justify text-sm text-gray-300">
+            <p>
+              I specialize in building fast, accessible, and responsive web apps
+              tailored to your business needs. Whether you're a startup, agency,
+              or individual looking for a dedicated developer, I'm here to bring
+              your vision to life.
+            </p>
+            <p className="pt-2">
+              Let’s collaborate to build impactful digital products — from UI
+              design to full-stack development.
+            </p>
+          </div>
+        </div>
+
+        {/* Form Section */}
         <div className="flex justify-center items-center">
           <form
             onSubmit={handleSubmit}
