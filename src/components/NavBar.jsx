@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import mb from "../assets/mb.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const [nav, setNav] = useState(false);
   const [isTop, setIsTop] = useState(true);
 

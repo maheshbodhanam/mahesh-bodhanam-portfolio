@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import NavBar from "./components/NavBar";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 // Lazy-loaded pages
 const Home = lazy(() => import("./components/Home"));

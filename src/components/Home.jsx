@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
 import mahesh from "../assets/mahesh.jpeg";
 import {
   FaLaptopCode,
   FaBusinessTime,
   FaGraduationCap,
   FaTools,
+  FaBriefcase,
+  FaGlobe,
+  FaEnvelopeOpenText,
 } from "react-icons/fa";
 
 const Home = () => {
@@ -61,8 +65,9 @@ const Home = () => {
         </div>
       </div>
 
-      {/* ASIDE: Technical Skills */}
+      {/* Grid ASIDE Sections */}
       <div className="mt-16 px-4 max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-200">
+        {/* Technical Skills */}
         <div className="bg-gray-900 p-6 rounded-xl shadow-md animate-fade-in-left">
           <div className="flex items-center gap-2 text-green-400 font-semibold mb-2">
             <FaLaptopCode /> <span>Technical Skills</span>
@@ -76,7 +81,7 @@ const Home = () => {
           </ul>
         </div>
 
-        {/* ASIDE: Project Showcase */}
+        {/* Projects */}
         <div className="bg-gray-900 p-6 rounded-xl shadow-md animate-fade-in-right">
           <div className="flex items-center gap-2 text-purple-400 font-semibold mb-2">
             <FaTools /> <span>Highlighted Projects</span>
@@ -88,6 +93,49 @@ const Home = () => {
             <li>🕹️ Decentralized Fantasy Gaming (Coinfantasy)</li>
             <li>📋 Task Management Dashboard (React + JSON Server)</li>
           </ul>
+        </div>
+
+        {/* Freelance Services */}
+        <div className="bg-gray-900 p-6 rounded-xl shadow-md animate-fade-in-left">
+          <div className="flex items-center gap-2 text-orange-400 font-semibold mb-2">
+            <FaBriefcase /> <span>Freelance Services</span>
+          </div>
+          <p className="text-sm text-gray-300">
+            Need a skilled developer for short-term or long-term freelance work?
+            I build full-stack applications, handle migrations, performance
+            tuning, and custom UI/UX implementations. Let's work together on
+            your next project.
+          </p>
+        </div>
+
+        {/* Portfolio & Personal Websites */}
+        <div className="bg-gray-900 p-6 rounded-xl shadow-md animate-fade-in-right">
+          <div className="flex items-center gap-2 text-pink-400 font-semibold mb-2">
+            <FaGlobe /> <span>Portfolios & Personal Websites</span>
+          </div>
+          <p className="text-sm text-gray-300">
+            Want to showcase your brand, resume, or startup? I create
+            professional portfolio websites optimized for speed, SEO, and mobile
+            responsiveness. Stand out online with a custom-crafted web presence.
+          </p>
+        </div>
+
+        {/* Contact Info */}
+        <div className="bg-gray-900 p-6 rounded-xl shadow-md animate-fade-in-up md:col-span-2">
+          <p className="text-sm text-gray-300 mb-2">
+            I'm open to freelance gigs, collaborations, or full-time
+            opportunities. Drop a message to discuss your project or just say
+            hi.
+          </p>
+          <Link to="/contact">
+            <button
+              className={`text-white hover:scale-110 bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3  mx-auto flex items-center justify-center rounded-md duration-300`}
+            >
+              <div className="flex items-center gap-2 font-semibold">
+                <FaEnvelopeOpenText /> <span>Let's Connect</span>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
