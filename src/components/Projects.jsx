@@ -187,7 +187,7 @@ const Projects = () => {
               rooms, and user authentication.
               <br />
               <a
-                href="https://magenta-sawine-f30018.netlify.app"
+                href="https://chit-chat-mb.netlify.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 underline"
